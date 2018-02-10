@@ -1,6 +1,6 @@
 # Node To Do
 
-To Do or Node To Do? A simple API for a ToDo app written in Node.js.
+To Do or Node To Do? A simple API for a ToDo app written with Node.js.
 
 ## Getting Started
 
