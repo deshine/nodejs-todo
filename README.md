@@ -68,7 +68,7 @@ All endpoints except root require a token to be sent in header as 'Authorization
     * GET /tasks/{email}?dueDate=03-21-2018 - lists all tasks due on 03-21-2018
     * GET /tasks/{email}?dueDate=03-21-2018&beforeDue=1 - lists all tasks due on or before 03-21-2018
 
-* List of all project - optional filters set as query parameters for priority, dueDate, and beforeDue
+* List of all tasks for a project - optional filters set as query parameters for priority, dueDate, and beforeDue
     * GET /tasks/{email}/{name}
     * GET /tasks/{email}/{name}?dueDate=03-21-2018 - lists all tasks due on 03-21-2018
     * GET /tasks/{email}/{name}?dueDate=03-21-2018&beforeDue=1 - lists all tasks due on or before 03-21-2018
