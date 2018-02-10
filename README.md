@@ -1,15 +1,14 @@
-# What To Do
+# Node To Do
 
-A simple API for a ToDo app written in Node.js
+To Do or Not To Do? A simple API for a ToDo app written in Node.js.
 
 ## Getting Started
 
-Clone to your computer and run 'npm install' from project root to download dependencies. Modify config_sample.js and rename to config.js. From project root, run 'npm start' to start the node server. Access API at http://localhost:3000/
+Clone to your computer. Run 'npm install' from project root to download dependencies. Modify config_sample.js and rename to config.js. From project root, run 'npm start' to start the node server. Access API at http://localhost:3000/
 
 ### Prerequisites
 
-Node.js
-MongoDB
+Node.js, MongoDB
 
 ### Authorization
 
@@ -49,11 +48,12 @@ All endpoints except root require a token to be sent in header as 'Authorization
 
 * Create a project
     * POST /projects/{email}
+        * email (automatically set)
     	* name
 
 * Edit a project
     * PUT /projects/{email}/{name}
-    	* email (automatically set)
+    	* email
     	* name
 
 * Delete a project
@@ -96,3 +96,14 @@ All endpoints except root require a token to be sent in header as 'Authorization
 
 * Delete a task - all tasks with lower priority will be moved up
 	* DELETE /tasks/{email}/{name}/{priority}
+
+## Built With
+
+* [Node.js](https://nodejs.org)
+* [MongoDB](https://www.mongodb.com/)
+* [Hapijs](https://hapijs.com/)
+
+
+## License
+
+This project is licensed under the MIT License
