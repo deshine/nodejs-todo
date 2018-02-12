@@ -117,17 +117,11 @@ exports.update = async (req, h) => {
 			if ('priority' in req.payload) {
 				const oldPriority = oldTask.priority;
 				let newPriority = req.payload.priority;
-				if (newPriority > totalTasks) {
-
+				if (newPriority > totalTasks-1) {
 					newPriority = totalTasks-1; // set new task priority to the lowest priority
-					// if new priority is greater than total tasks, move all priorities lower up 1 and assign new priority to the last priority			
-					let projectTasks = await Task.find(projectParam).where('priority').gt(oldPriority).sort('priority').exec();
-					if (projectTasks.length) {
-						for (let projectTask of projectTasks) {
-							await Task.update( {_id: projectTask._id}, {priority: projectTask.priority-1} );
-						}						
-					}
-				} else if (newPriority > oldPriority) {
+				}
+
+				if (newPriority > oldPriority) {
 
 					// if new priority is greater than old priority, shift task priorities up
 					let projectTasks = await Task.find(projectParam).where('priority').gt(oldPriority).lte(newPriority).exec();
